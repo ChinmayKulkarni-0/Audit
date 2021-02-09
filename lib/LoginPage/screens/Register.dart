@@ -127,23 +127,56 @@ class _RegisterState extends State<Register> {
             ),
           ),
         ),
+        SizedBox(
+          height: 20,
+        )
       ],
     );
   }
 
-  // Widget _buildForgotPasswordBtn() {
-  //   return Container(
-  //     alignment: Alignment.centerRight,
-  //     child: FlatButton(
-  //       onPressed: () => print('Forgot Password Button Pressed'),
-  //       padding: EdgeInsets.only(right: 0.0),
-  //       child: Text(
-  //         'Forgot Password?',
-  //         style: kLabelStyle,
-  //       ),
-  //     ),
-  //   );
-  // }
+  Widget _buildForgotPasswordBtn() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Phone',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+          //   style: kLabelStyle,
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          // decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            onChanged: (value) {
+              email = value;
+            },
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'OpenSans',
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.phone,
+                color: Colors.white,
+              ),
+              hintText: "Enter Phone Number",
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
+              //  hintStyle: kHintTextStyle,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
   // Widget _buildRememberMeCheckbox() {
   //   return Container(
@@ -333,8 +366,8 @@ class _RegisterState extends State<Register> {
                     colors: [
                       Color(0xFF2a52be),
                       Color(0xFF010302),
-                      Color(0xFF4d4b50),
                       Color(0xFF020403),
+                      Color(0xFF4d4b50),
                     ],
                     stops: [0.1, 0.4, 0.7, 0.9],
                   ),
@@ -366,7 +399,7 @@ class _RegisterState extends State<Register> {
                         height: 30.0,
                       ),
                       _buildPasswordTF(),
-                      // _buildForgotPasswordBtn(),
+                      _buildForgotPasswordBtn(),
                       // _buildRememberMeCheckbox(),
                       _buildLoginBtn(),
                       _buildSignInWithText(),

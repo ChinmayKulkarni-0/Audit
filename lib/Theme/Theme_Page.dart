@@ -86,7 +86,7 @@ class _ThemePageState extends State<ThemePage>
               ),
               SizedBox(height: height * 0.1),
               Text(
-                'Choose a style',
+                'Choose your thing',
                 style: TextStyle(
                     fontSize: width * .06, fontWeight: FontWeight.bold),
               ),
@@ -94,11 +94,11 @@ class _ThemePageState extends State<ThemePage>
               Container(
                 width: width * .6,
                 child: Text(
-                  'Pop or subtle. Day or night. Customize your interface',
+                  'Pop or Knowledge. Day or night. Customize your interface',
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: height * 0.1),
+              SizedBox(height: 20),
               ZAnimatedToggle(
                 values: ['Light', 'Dark'],
                 onToggleCallback: (v) async {
@@ -129,23 +129,31 @@ class _ThemePageState extends State<ThemePage>
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                Container(
-                  height: 80,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.fitHeight,
-                        image: AssetImage("assets/img/Podcast.png")),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment(0.0, 0.0),
-                      colors: [
-                        Color(0xFF2a52be),
-                        const Color(0xFFd9d9d9),
-                      ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  child: Container(
+                    height: 80,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.fitHeight,
+                          image: AssetImage("assets/img/Podcast.png")),
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment(0.0, 0.0),
+                        colors: [
+                          Color(0xFF2a52be),
+                          const Color(0xFFd9d9d9),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
                   ),
                 ),
               ]),
@@ -175,51 +183,51 @@ class _ThemePageState extends State<ThemePage>
                   ),
                 ],
               ), // skip & next
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.symmetric(
-                      vertical: height * 0.02, horizontal: width * 0.04),
-                  alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: width * 0.025),
-                        child: Text(
-                          'Skip',
-                          style: TextStyle(
-                            fontSize: width * 0.045,
-                            color: const Color(0xFF7c7b7e),
-                            fontFamily: 'Rubik',
-                          ),
-                        ),
-                      ),
-                      RaisedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Home()),
-                          );
-                        },
-                        shape: CircleBorder(),
-                        color: themeProvider.isLightTheme
-                            ? const Color(0xFFFFFFFF)
-                            : const Color(0xFF35303f),
-                        child: Padding(
-                          padding: EdgeInsets.all(width * 0.05),
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: themeProvider.isLightTheme
-                                ? const Color(0xFF000000)
-                                : const Color(0xFFFFFFFF),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              // Expanded(
+              //   child: Container(
+              //     margin: EdgeInsets.symmetric(
+              //         vertical: height * 0.02, horizontal: width * 0.04),
+              //     alignment: Alignment.bottomCenter,
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: <Widget>[
+              //         Padding(
+              //           padding:
+              //               EdgeInsets.symmetric(horizontal: width * 0.025),
+              //           child: Text(
+              //             'Skip',
+              //             style: TextStyle(
+              //               fontSize: width * 0.045,
+              //               color: const Color(0xFF7c7b7e),
+              //               fontFamily: 'Rubik',
+              //             ),
+              //           ),
+              //         ),
+              //         RaisedButton(
+              //           onPressed: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => Home()),
+              // );
+              //           },
+              //           shape: CircleBorder(),
+              //           color: themeProvider.isLightTheme
+              //               ? const Color(0xFFFFFFFF)
+              //               : const Color(0xFF35303f),
+              //           child: Padding(
+              //             padding: EdgeInsets.all(width * 0.05),
+              //             child: Icon(
+              //               Icons.arrow_forward,
+              //               color: themeProvider.isLightTheme
+              //                   ? const Color(0xFF000000)
+              //                   : const Color(0xFFFFFFFF),
+              //             ),
+              //           ),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

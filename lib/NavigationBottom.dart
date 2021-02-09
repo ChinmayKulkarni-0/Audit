@@ -3,10 +3,15 @@ import 'package:creiv/Screens/Profile.dart';
 
 import 'package:creiv/Screens/Search_page.dart';
 import 'package:creiv/Theme/Theme_Page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+
+import 'LoginPage/screens/services/auth_bloc.dart';
 
 // ignore: must_be_immutable
 class Home extends StatefulWidget {
@@ -44,9 +49,9 @@ class _HomeState extends State<Home> {
         return SearchPage();
         break;
 
-      case 2:
-        return ThemePage();
-        break;
+      // case 2:
+      //   return ThemePage();
+      //   break;
 
       // case 3:
       //   return BrowsePage();
@@ -60,11 +65,14 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final authBloc = Provider.of<AuthBloc>(context);
+    final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       bottomNavigationBar: Theme(
-        data: ThemeData.dark().copyWith(primaryColor: Color(0xff090b11)),
+        data: ThemeData.light().copyWith(primaryColor: Color(0xff090b11)),
         child: BottomNavigationBar(
-          elevation: 100,
+          mouseCursor: MouseCursor.uncontrolled,
+          elevation: 15,
           type: BottomNavigationBarType.fixed,
           unselectedItemColor: Colors.blue,
           backgroundColor: Colors.transparent,
@@ -109,10 +117,11 @@ class _HomeState extends State<Home> {
                     Navigator.pushNamed(context, Profile.id);
                   },
                   icon: CircleAvatar(
-                      radius: 60,
-                      backgroundImage: NetworkImage(
-                          "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80")),
-                ))
+                      radius: 50,
+                      backgroundImage: user.photoURL != null
+                          ? NetworkImage(user.photoURL)
+                          : AssetImage('gassets/img/google.jpg')),
+                )),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
