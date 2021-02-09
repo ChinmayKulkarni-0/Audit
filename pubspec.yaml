@@ -64,6 +64,8 @@ flutter:
     - assets/img/2.png
     - assets/img/3.png
     - assets/img/4.png
+    - assets/img/Music.png
+    - assets/img/Podcast.png
 
     - assets/img/food.png
     - assets/img/food2.png

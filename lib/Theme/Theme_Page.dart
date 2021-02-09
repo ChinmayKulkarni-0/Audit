@@ -1,4 +1,4 @@
-import 'package:creiv/Screens/NavigationBottom.dart';
+import 'package:creiv/NavigationBottom.dart';
 import 'package:creiv/Theme/Animation.dart';
 import 'package:flutter/material.dart';
 
@@ -110,16 +110,46 @@ class _ThemePageState extends State<ThemePage>
               SizedBox(
                 height: height * .05,
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                ZAnimatedToggle(
-                  values: ['Songs', 'Podcast'],
-                  onToggleCallback: (v) async {
-                    await themeProvider.toggleThemeData();
-                    setState(() {});
-                    changeThemeMode(themeProvider.isLightTheme);
-                  },
-                )
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                Container(
+                  height: 80,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: AssetImage("assets/img/Music.png")),
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment(0.0, 0.0),
+                      colors: [
+                        Color(0xFF2a52be),
+                        const Color(0xFFd9d9d9),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                Container(
+                  height: 80,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: AssetImage("assets/img/Podcast.png")),
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment(0.0, 0.0),
+                      colors: [
+                        Color(0xFF2a52be),
+                        const Color(0xFFd9d9d9),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                ),
               ]),
+
               SizedBox(
                 height: height * .05,
               ),

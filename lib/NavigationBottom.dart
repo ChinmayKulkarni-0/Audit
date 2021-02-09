@@ -64,11 +64,11 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: Theme(
         data: ThemeData.dark().copyWith(primaryColor: Color(0xff090b11)),
         child: BottomNavigationBar(
-          elevation: 30,
+          elevation: 100,
           type: BottomNavigationBarType.fixed,
-          // unselectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.blue,
           backgroundColor: Colors.transparent,
-          selectedItemColor: Color(0xffe8e8e8),
+          selectedItemColor: Color(0xFF8983F7),
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(

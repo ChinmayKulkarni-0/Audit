@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:creiv/LoginPage/screens/services/auth_bloc.dart';
-import 'package:creiv/Screens/NavigationBottom.dart';
+import 'package:creiv/NavigationBottom.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -50,6 +50,9 @@ class _RegisterState extends State<Register> {
       children: <Widget>[
         Text(
           'Email',
+          style: TextStyle(
+            color: Colors.white,
+          ),
           //   style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
@@ -74,6 +77,9 @@ class _RegisterState extends State<Register> {
                 color: Colors.white,
               ),
               hintText: 'Enter your Email',
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
               //  hintStyle: kHintTextStyle,
             ),
           ),
@@ -88,6 +94,9 @@ class _RegisterState extends State<Register> {
       children: <Widget>[
         Text(
           'Password',
+          style: TextStyle(
+            color: Colors.white,
+          ),
           //  style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
@@ -112,7 +121,9 @@ class _RegisterState extends State<Register> {
                 color: Colors.white,
               ),
               hintText: 'Enter your Password',
-              //    hintStyle: kHintTextStyle,
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -217,6 +228,9 @@ class _RegisterState extends State<Register> {
         SizedBox(height: 20.0),
         Text(
           'Sign in with',
+          style: TextStyle(
+            color: Colors.white,
+          ),
           // style: kLabelStyle,
         ),
       ],
@@ -317,10 +331,10 @@ class _RegisterState extends State<Register> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xFF73AEF5),
-                      Color(0xFF61A4F1),
-                      Color(0xFF478DE0),
-                      Color(0xFF398AE5),
+                      Color(0xFF2a52be),
+                      Color(0xFF010302),
+                      Color(0xFF4d4b50),
+                      Color(0xFF020403),
                     ],
                     stops: [0.1, 0.4, 0.7, 0.9],
                   ),

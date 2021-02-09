@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 
 import 'LoginPage/screens/Login.dart';
 import 'LoginPage/screens/services/auth_bloc.dart';
-import 'Screens/NavigationBottom.dart';
+import 'NavigationBottom.dart';
 import 'Screens/Profile.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 
