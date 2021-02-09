@@ -1,8 +1,9 @@
-import 'package:creiv/Screens/Home_Page.dart';
+import 'package:creiv/Screens/Discover.dart';
 import 'package:creiv/Screens/Profile.dart';
-//import 'package:creiv/Screens/Profile.dart';
+
 import 'package:creiv/Screens/Search_page.dart';
-import 'package:creiv/constants.dart';
+import 'package:creiv/Theme/Theme_Page.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,9 +44,9 @@ class _HomeState extends State<Home> {
         return SearchPage();
         break;
 
-      // case 2:
-      //   return Profile();
-      //   break;
+      case 2:
+        return ThemePage();
+        break;
 
       // case 3:
       //   return BrowsePage();
@@ -60,21 +61,19 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kInactiveCardColour,
       bottomNavigationBar: Theme(
         data: ThemeData.dark().copyWith(primaryColor: Color(0xff090b11)),
         child: BottomNavigationBar(
           elevation: 30,
           type: BottomNavigationBarType.fixed,
           // unselectedItemColor: Colors.blue,
-          selectedItemColor: Color(0xffe8e8e8),
           backgroundColor: Colors.transparent,
+          selectedItemColor: Color(0xffe8e8e8),
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.home,
                 size: 15,
-                color: Colors.grey,
               ),
               activeIcon: Icon(FontAwesomeIcons.home),
               label: '',

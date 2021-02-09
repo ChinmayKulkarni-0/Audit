@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:creiv/LoginPage/screens/services/auth_bloc.dart';
-import 'package:creiv/Screens/Home.dart';
+import 'package:creiv/Screens/NavigationBottom.dart';
+import 'package:creiv/Theme/Theme_Page.dart';
 
-import 'package:creiv/constant1.dart';
+//import 'package:creiv/constant1.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (fbUser != null) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => Home(),
+            builder: (context) => ThemePage(),
           ),
         );
       }
@@ -52,12 +53,12 @@ class _LoginScreenState extends State<LoginScreen> {
       children: <Widget>[
         Text(
           'Email',
-          style: kLabelStyle,
+          //style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
+          // decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.white,
               ),
               hintText: 'Enter your Email',
-              hintStyle: kHintTextStyle,
+              //  hintStyle: kHintTextStyle,
             ),
           ),
         ),
@@ -90,12 +91,12 @@ class _LoginScreenState extends State<LoginScreen> {
       children: <Widget>[
         Text(
           'Password',
-          style: kLabelStyle,
+          // style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
+          // decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
             obscureText: true,
@@ -114,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.white,
               ),
               hintText: 'Enter your Password',
-              hintStyle: kHintTextStyle,
+              // hintStyle: kHintTextStyle,
             ),
           ),
         ),
@@ -130,7 +131,8 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
           'Forgot Password?',
-          style: kLabelStyle,
+
+          /// style: kLabelStyle,
         ),
       ),
     );
@@ -156,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Text(
             'Remember me',
-            style: kLabelStyle,
+            // style: kLabelStyle,
           ),
         ],
       ),
@@ -219,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
         SizedBox(height: 20.0),
         Text(
           'Sign in with',
-          style: kLabelStyle,
+          //   style: kLabelStyle,
         ),
       ],
     );

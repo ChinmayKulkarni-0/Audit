@@ -1,5 +1,5 @@
 import 'package:creiv/Screens/HomeProvider.dart';
-import 'package:creiv/constants.dart';
+//import 'package:creiv/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,7 +13,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kInactiveCardColour,
       body: Column(
         children: <Widget>[
           SizedBox(
@@ -31,9 +30,7 @@ class _HomePageState extends State<HomePage> {
                       "Home",
                       style: GoogleFonts.openSans(
                           textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold)),
+                              fontSize: 50, fontWeight: FontWeight.bold)),
                     ),
                     SizedBox(
                       height: 50,
@@ -42,9 +39,7 @@ class _HomePageState extends State<HomePage> {
                       "Featured",
                       style: GoogleFonts.openSans(
                           textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.w600)),
+                              fontSize: 40, fontWeight: FontWeight.w600)),
                     ),
                     SizedBox(
                       height: 4,
@@ -53,9 +48,7 @@ class _HomePageState extends State<HomePage> {
                       "This Week",
                       style: GoogleFonts.openSans(
                           textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600)),
+                              fontSize: 15, fontWeight: FontWeight.w600)),
                     ),
                   ],
                 ),

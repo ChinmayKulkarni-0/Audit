@@ -2,9 +2,8 @@ import 'dart:async';
 
 import 'package:creiv/LoginPage/screens/Login.dart';
 import 'package:creiv/LoginPage/screens/services/auth_bloc.dart';
-import 'package:creiv/Screens/Home.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:creiv/constants.dart';
+import 'package:creiv/Screens/NavigationBottom.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
@@ -64,19 +63,16 @@ class _ProfileState extends State<Profile> {
     final authBloc = Provider.of<AuthBloc>(context);
     final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
-      backgroundColor: kActiveCardColour,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
           ),
           onPressed: () {
             Navigator.pushNamed(context, Home.id);
           },
         ),
         elevation: 0,
-        backgroundColor: kActiveCardColour,
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -96,8 +92,7 @@ class _ProfileState extends State<Profile> {
                     radius: 50,
                     backgroundImage: user.photoURL != null
                         ? NetworkImage(user.photoURL)
-                        : AssetImage('gassets/img/google.jpg')
-                    ),
+                        : AssetImage('gassets/img/google.jpg')),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 38),
@@ -108,9 +103,9 @@ class _ProfileState extends State<Profile> {
                       "User",
                       //  user.displayName,
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
-                          color: Colors.white),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8),
@@ -119,17 +114,14 @@ class _ProfileState extends State<Profile> {
                         children: <Widget>[
                           Icon(
                             Icons.location_on,
-                            color: Colors.white,
                             size: 17,
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
                             child: Text(
                               "India-MH",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  wordSpacing: 2,
-                                  letterSpacing: 4),
+                              style:
+                                  TextStyle(wordSpacing: 2, letterSpacing: 4),
                             ),
                           ),
                         ],
@@ -152,17 +144,13 @@ class _ProfileState extends State<Profile> {
                       Text(
                         "10k",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25),
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                       Text(
                         "Followers",
-                        style: TextStyle(color: Colors.white),
                       ),
                     ]),
                 Container(
-                  color: Colors.white,
                   width: 0.2,
                   height: 22,
                 ),
@@ -172,17 +160,13 @@ class _ProfileState extends State<Profile> {
                       Text(
                         "10k",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25),
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                       Text(
                         "Followers",
-                        style: TextStyle(color: Colors.white),
                       ),
                     ]),
                 Container(
-                  color: Colors.white,
                   width: 0.2,
                   height: 22,
                 ),
@@ -197,8 +181,7 @@ class _ProfileState extends State<Profile> {
                           end: Alignment.centerLeft)),
                   child: Text(
                     "Follow",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 )
               ],
@@ -212,15 +195,14 @@ class _ProfileState extends State<Profile> {
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(22),
-                        border: Border.all(color: Colors.white10)),
+                      borderRadius: BorderRadius.circular(22),
+                    ),
                     margin: EdgeInsets.only(right: 13),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 13.0, bottom: 5, right: 20, left: 20),
                       child: Text(
                         tags[index],
-                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   );
@@ -231,7 +213,7 @@ class _ProfileState extends State<Profile> {
               width: double.infinity,
               margin: EdgeInsets.only(top: 15),
               decoration: BoxDecoration(
-                  color: kInactiveCardColour,
+                  //  color: kInactiveCardColour,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(50))),
               child: Column(
@@ -244,9 +226,9 @@ class _ProfileState extends State<Profile> {
                     child: Text(
                       "Feeds",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 33,
-                          color: Colors.white),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 33,
+                      ),
                     ),
                   ),
                   SignInButton(Buttons.Google,
