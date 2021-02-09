@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "963510073183",
+    "project_id": "cruelr-88553",
+    "storage_bucket": "cruelr-88553.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963510073183:android:54d034b67c6a067ae468ea",
+        "android_client_info": {
+          "package_name": "com.example.creiv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963510073183-69nvqq4dogp0a32jbdu0ahtoj8dnoanf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.creiv",
+            "certificate_hash": "4d79c404f3cf7965f7ebb48c9799b5bacba0db4a"
+          }
+        },
+        {
+          "client_id": "963510073183-oc751120hl9lbi8ipcdh9697lq2qn1h9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIE3qrOZVvB4gKbcWJQ6t_qT22jp8RdjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963510073183-oc751120hl9lbi8ipcdh9697lq2qn1h9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
