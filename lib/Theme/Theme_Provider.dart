@@ -23,8 +23,9 @@ class ThemeProvider with ChangeNotifier {
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.light,
-        systemNavigationBarColor: Color(0xFF26242e),
+        systemNavigationBarColor: Color(0xFF000000),
         systemNavigationBarIconBrightness: Brightness.dark,
+        systemNavigationBarDividerColor: Color(0xFF000000),
       ));
     }
   }
@@ -43,11 +44,12 @@ class ThemeProvider with ChangeNotifier {
     return ThemeData(
       visualDensity: VisualDensity.adaptivePlatformDensity,
       primarySwatch: isLightTheme ? Colors.grey : Colors.grey,
-      primaryColor: isLightTheme ? Colors.white : Color(0xFF1E1F28),
+      primaryColor: isLightTheme ? Colors.white : Color(0xFF000000),
       brightness: isLightTheme ? Brightness.light : Brightness.dark,
-      backgroundColor: isLightTheme ? Color(0xFFFFFFFF) : Color(0xFF26242e),
+      backgroundColor: isLightTheme ? Color(0xFFFFFFFF) : Color(0xFF000000),
+      bottomAppBarColor: isLightTheme ? Color(0xFFFFFFFF) : Color(0xFF000000),
       scaffoldBackgroundColor:
-          isLightTheme ? Color(0xFFFFFFFF) : Color(0xFF26242e),
+          isLightTheme ? Color(0xFFFFFFFF) : Color(0xFF000000),
     );
   }
 

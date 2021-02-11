@@ -159,7 +159,7 @@ class _ThemePageState extends State<ThemePage>
               ]),
 
               SizedBox(
-                height: height * .05,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

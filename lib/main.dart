@@ -4,9 +4,12 @@ import 'package:creiv/Screens/Discover.dart';
 import 'package:creiv/Screens/Search_page.dart';
 import 'package:creiv/Theme/Animation.dart';
 import 'package:creiv/Theme/Theme_Page.dart';
+import 'package:creiv/Theme/bottombutton.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
@@ -68,7 +71,8 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: 'Creiv',
         theme: widget.themeProvider.themeData(),
-        initialRoute: LoginScreen.id,
+        home: SplashScreen(),
+        // initialRoute: Register.id,
         routes: {
           ThemeProvider.id: (context) => ThemePage(),
           ThemePage.id: (context) => ThemePage(),
