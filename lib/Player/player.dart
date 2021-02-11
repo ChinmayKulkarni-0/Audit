@@ -1,4 +1,5 @@
 import 'package:creiv/Player/playlist.dart';
+import 'package:creiv/Screens/HomeProvider.dart';
 import 'package:flutter/material.dart';
 
 import 'Songslist.dart';
@@ -23,7 +24,7 @@ class _PlayerState extends State<Player> {
               .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        //backgroundColor: Colors.transparent,
         actions: [
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -60,7 +61,15 @@ class _PlayerState extends State<Player> {
   Widget _buildCurrentPlayingSong(Size size) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/song');
+        showModalBottomSheet(
+          context: context,
+          builder: (bCtx) {
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              child: MusicApp(),
+            );
+          },
+        );
       },
       child: Container(
         height: size.height * 0.103,
@@ -73,8 +82,7 @@ class _PlayerState extends State<Player> {
         child: Row(
           children: [
             CircleAvatar(
-                radius: 25,
-                backgroundImage: AssetImage('assets/images/colors.jpg')),
+                radius: 25, backgroundImage: AssetImage('assets/img/3.png')),
             SizedBox(
               width: 10.0,
             ),
@@ -107,11 +115,12 @@ class _PlayerState extends State<Player> {
               height: 30,
               width: 30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(10.0),
-                  color: Colors.white),
+                borderRadius: BorderRadiusDirectional.circular(10.0),
+                //color: Colors.white
+              ),
               child: Icon(
                 Icons.pause,
-                color: Colors.black,
+                //   color: Colors.black,
               ),
             )
           ],
@@ -122,7 +131,7 @@ class _PlayerState extends State<Player> {
 
   Widget _buildNavigationRail() {
     return NavigationRail(
-      minWidth: 80.0,
+      minWidth: 50.0,
       selectedIndex: _selectedIndex,
       onDestinationSelected: (int index) {
         setState(() {
@@ -131,20 +140,22 @@ class _PlayerState extends State<Player> {
       },
       groupAlignment: -0.1,
       labelType: NavigationRailLabelType.all,
-      selectedLabelTextStyle:
-          TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-      unselectedLabelTextStyle:
-          TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      selectedLabelTextStyle: TextStyle(fontWeight: FontWeight.bold),
+      unselectedLabelTextStyle: TextStyle(
+          //color: Colors.white,
+          fontWeight: FontWeight.bold),
       leading: Column(children: [
         Icon(
           Icons.playlist_play,
           //  color: kPrimaryColor,
         ),
-        SizedBox(height: 5.0),
-        RotatedBox(
-          quarterTurns: 100,
-          child: CircleAvatar(
-              radius: 30, backgroundImage: AssetImage('assets/img/4.png')),
+        SizedBox(height: 10.0),
+        SingleChildScrollView(
+          child: RotatedBox(
+            quarterTurns: 100,
+            child: CircleAvatar(
+                radius: 30, backgroundImage: AssetImage('assets/img/4.png')),
+          ),
         ),
       ]),
       destinations: [
@@ -179,7 +190,15 @@ class _PlayerState extends State<Player> {
             child: CircleAvatar(
                 radius: 30, backgroundImage: AssetImage('assets/img/1.png')),
           ),
-        )
+        ),
+        NavigationRailDestination(
+          icon: SizedBox.shrink(),
+          label: RotatedBox(
+            quarterTurns: 100,
+            child: CircleAvatar(
+                radius: 30, backgroundImage: AssetImage('assets/img/1.png')),
+          ),
+        ),
       ],
     );
   }
@@ -220,9 +239,10 @@ class _PlayerState extends State<Player> {
       margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
       width: 220,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.blueAccent,
-          image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill)),
+        borderRadius: BorderRadius.circular(20.0),
+        // color: Colors.blueAccent,
+        image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
+      ),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Row(
@@ -232,7 +252,7 @@ class _PlayerState extends State<Player> {
               child: Text(
                 title,
                 style: TextStyle(
-                    color: Colors.white,
+                    //  color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
@@ -243,11 +263,12 @@ class _PlayerState extends State<Player> {
               width: 30,
               margin: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.white),
+                borderRadius: BorderRadius.circular(10.0),
+                // color: Colors.white
+              ),
               child: Icon(
                 Icons.play_circle_outline,
-                color: Colors.black,
+                //  color: Colors.black,
               ),
             )
           ],

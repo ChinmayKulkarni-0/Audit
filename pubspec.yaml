@@ -75,6 +75,8 @@ flutter:
     - assets/img/Podcast.png
     - assets/img/Splash.json
     - assets/img/Alan.mp3
+    - assets/img/backdround.jpg
+
 
     - assets/img/food.png
     - assets/img/food2.png

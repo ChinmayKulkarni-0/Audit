@@ -3,7 +3,7 @@ import 'package:creiv/Screens/Discover.dart';
 import 'package:creiv/Screens/Profile.dart';
 
 import 'package:creiv/Screens/Search_page.dart';
-import 'package:creiv/Theme/Theme_Page.dart';
+import 'package:creiv/Theme/WelcomePage.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

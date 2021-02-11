@@ -122,9 +122,9 @@ class _SearchPageState extends State<SearchPage>
                 child: TabBarView(
                   controller: _tabController,
                   children: <Widget>[
-                    Container(child: HorizontalImages()),
-                    Container(child: HorizontalImages()),
-                    Container(child: HorizontalImages()),
+                    // Container(child: HorizontalImages()),
+                    // Container(child: HorizontalImages()),
+                    // Container(child: HorizontalImages()),
                   ],
                 ),
               )
